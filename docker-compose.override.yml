@@ -11,6 +11,4 @@ services:
   triggerer:
     volumes:
       - ./dbt:/usr/local/airflow/dbt:rw
-  postgres:
-    volumes:
-      -  ./dbt:/usr/local/airflow/dbt:rw  
+  
