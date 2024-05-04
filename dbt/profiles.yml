@@ -7,7 +7,7 @@ traffic:
       host: postgres
       pass: postgres
       port: 5432
-      schema: public
+      schema: models
       threads: 4
       type: postgres
       user: postgres

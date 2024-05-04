@@ -1,0 +1,94 @@
+version: 2
+models:
+  - name: trajectory_summary
+    description: one line for each trajectory
+    columns:
+      - name: track_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: max_lon_acc
+        tests:
+          - not_null
+      - name: max_lat_acc
+        tests:
+          - not_null
+      - name: total_time
+        tests:
+          - not_null
+
+  - name: full_summary
+    description: Summary table for full trajectory information
+    columns:
+      - name: track_id
+        type: text
+        tests:
+          - not_null
+        description: Primary key for the trajectory
+      - name: type
+        type: text
+        tests:
+          - not_null
+        description: Type of the trajectory
+      - name: full_distance
+        type: text
+        tests:
+          - not_null
+        description: Total distance covered in the trajectory
+      - name: total_time
+        type: text
+        tests:
+          - not_null
+        description: Total time taken for the trajectory
+      - name: avg_speed
+        type: text
+        tests:
+          - not_null
+        description: Average speed during the trajectory
+      - name: max_lat_acc
+        type: text
+        tests:
+          - not_null
+        description: Maximum lateral acceleration experienced
+      - name: max_lon_acc
+        type: text
+        tests:
+          - not_null
+        description: Maximum longitudinal acceleration experienced
+
+  - name: distance_summary
+    description: Summary table for distance and type of trajectories
+    columns:
+      - name: full_distance
+        description: Distance covered in the trajectory
+        tests:
+          - not_null
+      - name: type
+        description: Type of the trajectory
+        tests:
+          - not_null
+      - name: count
+        description: Count of trajectories
+        tests:
+          - not_null
+      - name: avg_duration
+        description: Average duration of trajectories
+        tests:
+          - not_null
+      - name: avg_speed
+        description: Average speed during the trajectories
+        tests:
+          - not_null
+      - name: max_speed
+        description: Maximum speed during the trajectories
+        tests:
+          - not_null
+      - name: max_lat_acc
+        description: Maximum lateral acceleration experienced
+        tests:
+          - not_null
+      - name: max_lon_acc
+        description: Maximum longitudinal acceleration experienced
+        tests:
+          - not_null
